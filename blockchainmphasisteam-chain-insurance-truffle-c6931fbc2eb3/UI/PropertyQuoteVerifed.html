@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Quote  Verified</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/MainLogin.css">
+    
+    <!--             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
+    <script src="assets/jquery-3.2.1.min.js"></script>
+<!--      <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>  -->
+ <script src="assets/jquery-ui-1.11.1/jquery-1.11.1.min.js"></script>
+<!-- <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script> -->
+<script src="assets/jquery-ui-1.11.1/jquery-ui.min.js"></script>
+<!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />  -->
+    
+          <link rel="stylesheet" href="assets/jquery-ui-1.11.1/jquery-ui.css" />
+    <style>
+
+#namanyay-search-btn {
+background:black;
+color:white;
+margin-top:19px;
+font: 'trebuchet ms', trebuchet;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+
+#namanyay-search-box {
+background: #eee;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:300px;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+ }
+</style>
+    
+   
+    
+  
+</head>
+
+<body id="main_body">
+   
+   
+   
+   
+   <nav class="navbar navbar-default" id="nav_bar" style="background:black;">
+        <div class="container-fluid">
+            <div class="navbar-header" ><a class="navbar-brand navbar-link" href="#"><i class="fa fa-th" id="bank_icon" style="margin-right:3px;"></i><span id="bankName" style="font-size:17px;"> DB Bank</span></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                                   <li role="presentation" id="f" style="margin-right:350px;"><a href="#" onclick="MyFunction();">Information</a></li>
+                                                   <li role="presentation" id="e" style="margin-right:450px;"><a href="#" onclick="MyFunction();">Information</a></li>
+                
+                    <li role="presentation" id="a"><a href="index.html" >About</a></li>
+                    <li role="presentation" id="b"><a href="ApplyForLoan.html" >Customer's Portal</a></li>
+                    <li role="presentation" id="c"><a href="ApplyForLoan.html">Admin's Portal</a></li>
+                    
+                    <li role="presentation" id="d"><a href="bankLogin.html"><i class="fa fa-lock" id="tx_icon" style="margin-right:8px;"></i>Login</a></li>
+                    
+                    <li role="presentation" style="color:white;">
+                    Search
+<input id="namanyay-search-box" name="q" size="40" type="text" />
+<button id="namanyay-search-btn"><i class="fa fa-search" aria-hidden="true"></i>
+</button>
+               </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+   
+   
+ 
+    <nav class="navbar navbar-default" id="nav_bar2" style="background:#f3f1f1;">
+        <div class="container-fluid" style="background:#f3f1f1;">
+            
+            <div class="collapse navbar-collapse" id="navcol-1" style="background:#f3f1f1;">
+                <ul class="nav navbar-nav navbar-left" style="font-size:14px;" >
+                              
+                
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Free Credit Report </a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">myBank Rate</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">IRA CD Rates</a></li>
+                    <li style="margin-right:8px;" ><a href="MortgageMain.html" style="color:black;">Get Quotes</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Loan Calculator</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Brokerage Account</a></li>
+                    
+                    
+                    
+                    
+                    
+                  
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+    <div class="imagebanner">
+  <img src="http://www.okayplusgroup.com/blog/wp-content/uploads/2017/02/banner.jpg" style="width:100%;">
+  <div class="content">
+    <h1 id="custInfo">Welcome To Chain Insurance.</h1>
+    <p id="PolicyIntroCustName">Policy Details.</p>
+  </div>
+</div>
+  
+      <button class="buttonLink" onclick="goBack()" style="margin-left:900px;margin-top:30px;">Go Back</button>
+  
+    <div class="container-fluid" id="main_container" >
+        <div class="row">
+        
+        <h2 style="color:black;margin-top:10px;text-align:left;margin-left:250px;">Personal Information</h2>
+         <table style="margin-top:20px;width:700px;margin-left:250px;"class="table table-bordered">
+         
+         <tr>
+         <td style="font-weight:bold;color:black;">Loan ID</td>
+         <td id="loanId" style="color:black;"></td>
+         
+          <td style="font-weight:bold;color:black;">Term</td>
+         <td id="term" style="color:black;"></td>
+         
+         
+          <td style="font-weight:bold;color:black;">APR</td>
+         <td id="apr" style="color:black;"></td>
+         </tr>
+         
+         
+            <tr>
+         <td style="font-weight:bold;color:black;">Name</td>
+         <td id="name" style="color:black;"></td>
+         
+          <td style="font-weight:bold;color:black;">Email</td>
+         <td id="email" style="color:black;"></td>
+         
+         
+          <td style="font-weight:bold;color:black;">Request ID</td>
+         <td id="policyId" style="color:black;"></td>
+         </tr>
+         </table>
+            
+   <div class="col-lg-6 col-md-12 card" id="apply_loan_column" style="margin-top:20px;margin-left:390px;width:450px;">
+         <div class="titleLanding" id="titleText" style="margin-top:10px;">Log In As Admin</div>
+   <form role="form"   method="POST" action="" id="form1" >
+           
+           
+            
+     <br>
+     <br>
+       
+            
+             <p  style="color:black;margin-left:2px;text-align:left;">Property Type :</p>
+<input type="text" class="form-control" id="propertyType" name="propertyType" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+<p  style="color:black;margin-left:2px;text-align:left;">Property Address :</p>
+<input type="text" class="form-control" id="propertyAddress" name="propertyAddress" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+<p  style="color:black;margin-left:2px;text-align:left;">Purchase Price :</p>
+<input type="text" class="form-control" id="purchasePrice" name="purchasePrice" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+<p  style="color:black;margin-left:2px;text-align:left;">Down Payment :</p>
+<input type="text" class="form-control" id="downpayment" name="downpayment" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+
+<p  style="color:black;margin-left:2px;text-align:left;">Property Document :
+ <a href="#" id="btnShow" style="margin-left:130px;">View Document</a>
+</p>
+
+<input type="text" class="form-control" id="loanIds" name="loanIds">
+<input type="text" class="form-control" id="policyIds" name="policyIds">
+          
+           </form>
+         
+          
+          
+ 
+        
+ 
+    
+              
+              
+                </div>
+            
+             
+            
+    </div>
+    </div>
+    
+     <div id="dialog" style="display: none;width:700px;" >
+    
+        <iframe id="frame" style="width:600px;height:400px;"></iframe>
+        
+
+</div>
+     
+    
+   
+</body>
+   <script src="assets/js/Properties.js"></script>
+
+
+  <script>
+$(document).ready(function(){
+	 $("#e").hide();
+	 $("#f").show();
+	 $("#nav_bar2").hide();
+	 $("#inc").hide();
+	// $("#policyId").hide();
+	$("#policyIds").hide();
+	$("#loanIds").hide();
+	 
+	 
+	 $("#namanyay-search-box").hide();
+	 
+	 //var bank=localStorage.getItem("banksName");
+	 document.getElementById("bankName").innerHTML = "Chain Insurance";
+        //$("#main_footer").hide();
+       // document.getElementById("jumbotron_header").innerHTML = "Welcome To "+"ABC Bank";
+       
+	
+
+$("#namanyay-search-btn").on('focus', function () {
+	 $("#a").hide();
+	 $("#b").hide();
+	 $("#c").hide();
+	 $("#d").hide();
+	 $("#f").hide();
+	 $("#e").show();
+
+	
+	 $("#namanyay-search-box").show();
+   
+});
+
+
+
+
+$("#namanyay-search-box").on('blur', function () {
+	 $("#a").show();
+	 $("#b").show();
+	 $("#c").show();
+	 $("#d").show();
+	 $("#f").show();
+	 $("#e").hide();
+	 $("#namanyay-search-box").hide();
+
+  
+});
+
+
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+var insuranceAddress = getUrlParameter('insuranceAddress');
+var policyId = getUrlParameter('policyId');
+
+
+var name = getUrlParameter('name');
+
+var Name4=name.charAt(0).toUpperCase() + name.slice(1);
+ var replaced = Name4.split('_').join(' ');
+
+
+document.getElementById("PolicyIntroCustName").innerHTML = "Approved Request Details For Customer :"+replaced;
+document.getElementById("titleText").innerHTML = "Property Details For Request  ID: "+policyId;
+
+$("#propertyType").prop("readonly", true);
+$("#propertyAddress").prop("readonly", true);
+$("#purchasePrice").prop("readonly", true);
+
+$("#downpayment").prop("readonly", true);
+
+
+/*
+var ipAdd=localStorage.getItem("ipAdd");
+var port=localStorage.getItem("port");
+*/
+var ipAdd=ipAddress();
+var contractAddress=contract();
+var ipAddIpfs=ipfsIpAddress();
+var port=portNo();
+localStorage.setItem("ipAdd", ipAdd);
+localStorage.setItem("ipAddIpfs", ipAddIpfs);
+localStorage.setItem("port", port);
+localStorage.setItem("insuranceAddress1", contractAddress);
+
+$("#policyId").val(policyId);
+
+$("#policyIds").val(policyId);
+
+$.get("/getCustomerPolicy?policyId="+policyId+"&insuranceAddress="+insuranceAddress, function(response){
+	var loanId=response.message.loanId;
+	document.getElementById("loanId").innerHTML = response.message.loanId;
+	$("#loanIds").val(loanId);
+
+//	$("#").val(response.message.loanId);
+	var term=response.message.termOfPolicy ;
+	//term=term.replace("_", " ");
+	$("#termOfPolicy").val(term +" years");
+	$("#apr").val(response.message.apr);
+	 document.getElementById("term").innerHTML = term +" years";
+	 
+	 document.getElementById("apr").innerHTML = response.message.apr;
+	 
+	
+	var name=response.message.name;
+	name=name.replace("_", " ");
+	$("#propertyType").val(response.message.propertyType);
+//	$("#propertyAddress").val(response.message.propertyAddress);
+	$("#purchasePrice").val("$ " +response.message.purchasePrice);
+	$("#downpayment").val("$ "+response.message.downpayment);
+	
+	 var ppAdd=response.message.propertyAddress;
+	 var ppAdd2=ppAdd.charAt(0).toUpperCase() + ppAdd.slice(1);
+	 var replaced2 = ppAdd2.split('_').join(' ');
+	// document.getElementById("propertyAddress").innerHTML = replaced2;
+	 $("#propertyAddress").val(replaced2);
+	 
+	 document.getElementById("name").innerHTML = replaced;
+	 document.getElementById("email").innerHTML = response.message.emailId;
+	 document.getElementById("policyId").innerHTML = policyId;
+	 
+	 
+	 
+	 
+	
+	 
+	 $('#btnShow').click(function(){
+			$.get("/getDocumentHashByLoanId?loanId="+loanId, function(response){
+				  // alert(JSON.stringify(response.people));
+				//alert(JSON.stringify(response));
+				
+				 
+				// document.getElementById("propertyAddress").innerHTML = response.message.propertyAddress;
+				
+			
+		    $("#dialog").dialog({
+		       
+		            maxWidth:600,
+		            maxHeight: 450,
+		            width: 600,
+		            height: 450,
+		            modal: true
+		            
+		        });
+		 //   $("#frame").attr("src", "http://"+ipAdd+":8090/ipfs/"+response.message.taxReturnsHash);
+
+
+		$.get("/ipfs?fileHash=" + response.message.taxReturnsHash, function (response) {
+				$("#frame").attr("src", response.ipfsUrl);
+			});
+		   // $("#propertyDoc").val(response.message.taxReturnsHash);
+		}); 
+		});
+	
+	
+});
+
+
+});
+
+
+
+
+        
+
+
+</script>
+
+
+
+<script>
+function MyFunction(){
+	$("#nav_bar2").show();
+}
+
+</script>
+
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+</html>

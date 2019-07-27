@@ -1,0 +1,30 @@
+version: '2.1'
+services:
+  explorer-api:
+    image: ec2-52-52-172-203.us-west-1.compute.amazonaws.com:5080/claims-explorer-api:v1.1.0-mortgageins
+    environment:
+      - RPC_IP=127.0.0.1
+      - RPC_PORT=35002
+      - MONGO_IP=127.0.0.1
+      - MONGO_PORT=27017
+      - NODE_NAME=ChainInsurance
+      - API_PORT=5800
+      - DATABASE_NAME=chainins_blockchaindb
+    ports:
+      - "5800:5800"
+    container_name: explorer-api
+    restart: on-failure
+    network_mode: "host"
+    volumes:
+      - ./logs/api-logs:/api-logs/
+  pythonsyncapi:
+    image: ec2-52-52-172-203.us-west-1.compute.amazonaws.com:5080/pythonsyncapi:v1.0.1
+    network_mode: "host"
+    environment:
+      WEB3: http://localhost:35002
+      MONGO_IP: 127.0.0.1
+      MONGO_PORT: 27017
+      DATABASE_NAME: chainins_blockchaindb
+    container_name: python-sync-api
+    volumes:
+      - ./logs/api-logs:/api-logs/

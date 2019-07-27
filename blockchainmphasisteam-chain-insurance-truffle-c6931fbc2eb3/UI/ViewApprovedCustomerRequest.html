@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approved Customer Request </title>
+   
+ 
+       
+     
+     
+     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/MainLogin.css">
+  <!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
+      <script src="assets/jquery-3.2.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+<!--   <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"> -->
+    <link rel="stylesheet" href="assets/DataTables/datatables.min.css">
+<!-- <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script> -->
+     <script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
+<!-- <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>  -->
+ <script src="assets/jquery-ui-1.11.1/jquery-1.11.1.min.js"></script>
+<!-- <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>  -->
+<script src="assets/jquery-ui-1.11.1/jquery-ui.min.js"></script>
+<!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" /> -->
+            <link rel="stylesheet" href="assets/jquery-ui-1.11.1/jquery-ui.css" />
+    
+    <style>
+
+#namanyay-search-btn {
+background:#120d7c;
+color:white;
+margin-top:19px;
+font: 'trebuchet ms', trebuchet;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+
+#namanyay-search-box {
+background: #eee;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:300px;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+ }
+</style>
+    
+   
+</head>
+
+<body id="main_body">
+    <nav class="navbar navbar-default" id="nav_bar" style="background:black;">
+        <div class="container-fluid">
+            <div class="navbar-header" ><a class="navbar-brand navbar-link" href="#"><i class="fa fa-th" id="bank_icon" style="margin-right:3px;"></i><span id="bankName" style="font-size:17px;">Chain Insurance</span></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                                   <li role="presentation" id="f" style="margin-right:350px;"><a href="#" onclick="MyFunction();">Information</a></li>
+                                                   <li role="presentation" id="e" style="margin-right:450px;"><a href="#" onclick="MyFunction();">Information</a></li>
+                
+                    <li role="presentation" id="a"><a href="index.html" >About</a></li>
+                    <li role="presentation" id="b"><a href="ApplyForLoan.html" >Customer's Portal</a></li>
+                    <li role="presentation" id="c"><a href="ApplyForLoan.html">Admin's Portal</a></li>
+                    
+                    <li role="presentation" id="d"><a href="bankLogin.html"><i class="fa fa-lock" id="tx_icon" style="margin-right:8px;"></i>Login</a></li>
+                    
+                    <li role="presentation" style="color:white;">
+                    Search
+<input id="namanyay-search-box" name="q" size="40" type="text" />
+<button id="namanyay-search-btn"><i class="fa fa-search" style="background:black;" aria-hidden="true"></i>
+</button>
+               </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    
+    <nav class="navbar navbar-default" id="nav_bar2" style="background:#f3f1f1;">
+        <div class="container-fluid" style="background:#f3f1f1;">
+            
+            <div class="collapse navbar-collapse" id="navcol-1" style="background:#f3f1f1;">
+                <ul class="nav navbar-nav navbar-left" style="font-size:14px;" >
+                              
+                
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Free Credit Report </a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">myBank Rate</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">IRA CD Rates</a></li>
+                    <li style="margin-right:8px;" ><a href="MortgageMain.html" style="color:black;">Get Quotes</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Loan Calculator</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Brokerage Account</a></li>
+                    
+                    
+                    
+                    
+                    
+                  
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+     
+   
+    <div class="imagebanner">
+  <img src="assets/img/bannerInsNew.jpg" alt="Chain Insurance" style="width:100%;">
+  <div class="content">
+    <h1 id="custInfo">Welcome To Chain Insurance.</h1>
+    <p>All Requests For Chain Insurance.</p>
+  </div>
+</div>
+  
+  
+
+    <!--  
+    Second Section -->
+    
+              <button class="buttonLink" onclick="goBack()" style="margin-left:940px;margin-top:40px;">Go Back</button>
+    
+      
+     <div class="container-fluid" id="main_container" style="margin-top:10px;width:850px;">
+        
+
+ 
+          <h3 style="color:black;text-align:left;margin-left:20px;">Current Status</h3>
+ <table class="table table-bordered" style="color:black; margin-top:20px;width:780px;margin-left:20px;" id="infoTable2">
+   
+  
+      <tr>
+        <td>Loan Status</td>
+        <td id="loanStatus" style="font-weight:bold;">Proposal Rejected</td>
+        <td>Current Action</td>
+        <td id="currentAction" style="font-weight:bold;"> -</td>
+        
+       
+        
+        
+       
+      </tr>
+      
+      </table>
+                      <button class="button" style="width:800px;margin-top:30px;"id="InterestDetails">Premium Details</button>
+      
+        <form  id='uploadForm3' action='' method='post'>
+
+   <table class="table table-bordered" style="color:black; margin-top:20px;width:780px;margin-left:20px;" id="infoTable">
+    <tr>
+    <td >
+    Loan Amount
+    </td>
+    <td id="loanValue" style="font-weight:bold;">
+    </td>
+      <td>
+    Down Payment
+    </td>
+    <td id="loanDownPaymentValue" style="font-weight:bold;">
+    </td>
+    </tr>
+  
+  <tr>
+    <td >
+    Interest Rate
+    </td>
+    <td id="interestRate" style="font-weight:bold;">
+    </td>
+      <td>
+    Premium Payment
+    </td>
+    <td id="premium" style="font-weight:bold;">
+    </td>
+    </tr>
+  
+         <tr>
+      <td >
+    Policy ID
+    </td>
+     
+      <td id="policyIds" style="font-weight:bold;">
+    
+    </td>
+    <td >
+    Policy Document
+    </td>
+  
+    <td ><a href="#" id="btnShow5">View Policy Document</a></td>
+   
+    </tr>
+      </table>   
+                  <h3 style="color:black;text-align:left;margin-left:20px;margin-top:40px;">Loan Details Verified By ABC Bank</h3>
+      
+      
+   <table class="table table-bordered" style="color:black; margin-top:20px;width:780px;margin-left:20px;" id="infoTables">
+   
+  
+      <tr>
+        <td>Loan ID</td>
+        <td id="loanId" style="font-weight:bold;"></td>
+        <td>Loan Purpose</td>
+        <td id="loanPurpose" style="font-weight:bold;"></td>
+        
+        <td>Loan Type</td>
+        <td id="loanType" style="font-weight:bold;"></td>
+        
+        
+        
+       
+      </tr>
+      
+      <tr>
+        <td>Interest Type</td>
+        <td id="interestType" style="font-weight:bold;"></td>
+        <td>Loan Term</td>
+        <td id="loanTerm" style="font-weight:bold;"></td>
+        
+        <td>Purchase Price</td>
+        <td id="purchasePrice" style="font-weight:bold;"></td>
+      
+      </tr>
+     
+      <tr>
+      
+         <td>Down Payment</td>
+        <td id="downPayment" style="font-weight:bold;"></td>
+        <td>Property Type</td>
+        <td id="propertyType" style="font-weight:bold;"></td>
+        
+        <td>Property Address</td>
+        <td id="propertyAddress" style="font-weight:bold;"></td>
+       
+      </tr>
+   
+  </table>
+  
+              <h3 style="color:black;text-align:left;margin-left:20px;margin-top:40px;">Documents Uploaded For Loan</h3>
+  
+  
+  
+  
+     <table id="tbId" style="color:black;margin-top:20px;width:730px;margin-left:50px;" class="table table-bordered">
+     <th>SNo.</th>
+     <th>Name Of Document</th>
+     <th>Tag</th>
+     <th>File</th>
+     
+   
+
+             
+            
+     <tr>
+     <td>1</td>
+     <td>SSN </td>
+      <td>SSN</td>
+       <td><a href="#" id="btnShow">View Document</a></td>
+      
+
+     </tr>
+     
+      <tr>
+     <td>2</td>
+     <td>Passport </td>
+      <td>Passport</td>
+       <td><a href="#" id="btnShow2">View Document</a></td>
+     </tr>
+     
+              
+     <tr>
+     <td>3</td>
+     <td>Tax Document</td>
+      <td>Tax</td>
+       <td><a href="#" id="btnShow3">View Document</a></td>
+      
+
+     </tr>
+     
+      <tr>
+     <td>4</td>
+     <td>Salary </td>
+      <td>Salary Document</td>
+       <td><a href="#" id="btnShow4">View Document</a></td>
+     </tr>
+     
+  
+     
+      </table>   
+
+ <input type="text" name="loanIds" id="loanIds" />
+  
+         
+    </form>  
+    
+  
+    </div>
+    
+    <div id="dialog" style="display: none;width:700px;" >
+    
+        <iframe id="frame" style="width:600px;height:400px;"></iframe>
+        
+
+</div>
+
+<div id="dialog2" style="display: none;width:700px;" >
+    
+      
+        
+         <iframe id="frame2" style="width:600px;height:400px;"></iframe>
+
+</div>
+
+<div id="dialog3" style="display: none;width:700px;" >
+    
+      
+        
+         <iframe id="frame3" style="width:600px;height:400px;"></iframe>
+
+</div>
+
+<div id="dialog4" style="display: none;width:700px;" >
+    
+      
+        
+         <iframe id="frame4" style="width:600px;height:400px;"></iframe>
+
+</div>
+    
+    
+    
+    <div id="dialog5" style="display: none;width:700px;" >
+    
+      
+        
+         <iframe id="frame5" style="width:600px;height:400px;"></iframe>
+
+</div>
+    
+    
+    
+    
+    
+    
+    <!--  
+    <footer id="main_footer">
+        <p>© 2017 Mphasis Unleash the Next. All rights reserved &nbsp; &nbsp; &nbsp;&nbsp; </p>
+    </footer>
+    -->
+  
+</body>
+   <script src="assets/js/Properties.js"></script>
+
+  <script>
+$(document).ready(function(){
+	 $("#e").hide();
+	 $("#f").show();
+	 $("#nav_bar2").hide();
+	 $("#infoTables").hide();
+	 $("#uploadForm2").hide();
+	 $("#uploadForm3").hide();
+	 $("#loanData").hide();
+	 $("#ownerAddress").hide();
+	 $("#username").hide();
+	 $("#password").hide();
+	 $("#tbId").hide();
+	 $("#button7").hide();
+	 $("#loanIds").hide();
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	/*
+	 
+	 $("#UploadTaxDocuments").click(function(){
+		  
+		});*/
+	 
+	 $("#InterestDetails").click(function(){
+		    $("#uploadForm3").show();
+		    $("#button7").show();
+		    $("#infoTables").show();
+		    $("#tbId").show();
+		    $("#uploadForm2").show();
+		});
+	 
+	 
+	 
+	 
+	 $("#namanyay-search-box").hide();
+	 
+	 //var bank=localStorage.getItem("banksName");
+	// document.getElementById("bankName").innerHTML = "ABC Bank";
+        //$("#main_footer").hide();
+       // document.getElementById("jumbotron_header").innerHTML = "Welcome To "+"ABC Bank";
+       
+	
+
+$("#namanyay-search-btn").on('focus', function () {
+	 $("#a").hide();
+	 $("#b").hide();
+	 $("#c").hide();
+	 $("#d").hide();
+	 $("#f").hide();
+	 $("#e").show();
+
+	
+	 $("#namanyay-search-box").show();
+   
+});
+
+
+$("#prequalify").click(function(){
+    $("#myModal").modal();
+});
+/*
+$("#UploadIdentityDocuments").click(function(){
+	
+});
+*/
+
+
+
+
+$("#applyForLoan").click(function(){
+    window.location.href="ApplyForLoan.html";
+}); 
+$("#namanyay-search-box").on('blur', function () {
+	 $("#a").show();
+	 $("#b").show();
+	 $("#c").show();
+	 $("#d").show();
+	 $("#f").show();
+	 $("#e").hide();
+	 $("#namanyay-search-box").hide();
+
+  
+});
+var walletAddress=localStorage.getItem("walletAddress");
+/*
+var ipAdd=localStorage.getItem("ipAdd");
+var ipAddIpfs=localStorage.getItem("ipAddIpfs");
+*/
+var ipAdd=ipAddress();
+var contractAddress=contract();
+var ipAddIpfs=ipfsIpAddress();
+var port=portNo();
+localStorage.setItem("ipAdd", ipAdd);
+localStorage.setItem("ipAddIpfs", ipAddIpfs);
+localStorage.setItem("port", port);
+localStorage.setItem("insuranceAddress1", contractAddress);
+
+var port=localStorage.getItem("port");
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+var loanId = getUrlParameter('loanId');
+var walletAddress = getUrlParameter('walletAddress');
+var status = getUrlParameter('status');
+var stat = getUrlParameter('status');
+
+status = status.split('_').join(' ');
+document.getElementById("loanStatus").innerHTML = status;
+
+
+var quote = getUrlParameter('quote');
+quote = quote.split('_').join('');
+
+
+
+if(stat=="Policy_Issued"){
+	$.get("/getCustomerPolicy?loanId="+loanId, function(response){
+		//alert(response);
+		 document.getElementById("policyIds").innerHTML = response.policyId;
+		 document.getElementById("premium").innerHTML = "$ "+response.premiumPaid;
+
+	});
+
+
+	$('#btnShow5').click(function(){
+		$.get("/getCustomerPolicy?loanId="+loanId, function(response){
+			  // alert(JSON.stringify(response.people));
+		//	alert(JSON.stringify(response));
+
+			 
+			// document.getElementById("propertyAddress").innerHTML = response.message.propertyAddress;
+			
+		
+	    $("#dialog5").dialog({
+	       
+	            maxWidth:600,
+	            maxHeight: 450,
+	            width: 600,
+	            height: 450,
+	            modal: true
+	            
+	        });
+	    //$("#frame5").attr("src", "http://"+ipAddIpfs+":8090/ipfs/"+response.policyDocument);
+
+		$.get("/ipfs?fileHash=" + response.message.policyDocument, function (response) {
+				$("#frame5").attr("src", response.ipfsUrl);
+			});
+
+
+
+	}); 
+	});
+
+	}
+	
+	
+	
+if(stat=="Loan_Approved"){
+	$.get("/getCustomerPolicy?loanId="+loanId, function(response){
+		//alert(JSON.stringify(response));
+		 document.getElementById("policyIds").innerHTML = response.policyId;
+
+		document.getElementById("premium").innerHTML = "$ "+response.premiumPaid;
+	});
+
+
+	$('#btnShow5').click(function(){
+		$.get("/getCustomerPolicy?loanId="+loanId, function(response){
+			  // alert(JSON.stringify(response.people));
+		//	alert(JSON.stringify(response));
+
+			 
+			// document.getElementById("propertyAddress").innerHTML = response.message.propertyAddress;
+			
+		
+	    $("#dialog5").dialog({
+	       
+	            maxWidth:600,
+	            maxHeight: 450,
+	            width: 600,
+	            height: 450,
+	            modal: true
+	            
+	        });
+	   // $("#frame5").attr("src", "http://"+ipAddIpfs+":8090/ipfs/"+response.policyDocument);
+
+		$.get("/ipfs?fileHash=" + response.message.policyDocument, function (response) {
+				$("#frame5").attr("src", response.ipfsUrl);
+			});
+
+	}); 
+	});
+
+	}
+else{
+	
+	var insAdd=localStorage.getItem("insuranceAddress1");
+
+	$.get("/getPremiumAmount?loanId="+loanId+"&insuranceAddress="+insAdd, function(responsejson){
+	//alert(JSON.stringify(responsejson));
+		var amount=responsejson.jsonResponse.premiumAmount;
+		document.getElementById("premium").innerHTML = amount;
+
+
+	});
+}
+
+$.get("/getCustomerPortfolioInfo?walletAddress="+walletAddress+"&loanId="+loanId, function(response){
+	  // alert(JSON.stringify(response.people));
+	//alert(JSON.stringify(response));
+	
+	 document.getElementById("loanId").innerHTML = response.message.loanId;
+	 document.getElementById("loanPurpose").innerHTML = response.message.loanPurpose;
+	 document.getElementById("loanType").innerHTML = response.message.loanType;
+	 document.getElementById("interestType").innerHTML = response.message.interestType;
+	 document.getElementById("loanTerm").innerHTML = response.message.loanTerm+" years";
+	 document.getElementById("purchasePrice").innerHTML = "$ "+response.message.purchasePrice;
+	 
+	 document.getElementById("downPayment").innerHTML = "$ "+response.message.downPayment;
+	 document.getElementById("propertyType").innerHTML = response.message.propertyType;
+	 var ppAdd=response.message.propertyAddress;
+	 var ppAdd2=ppAdd.charAt(0).toUpperCase() + ppAdd.slice(1);
+	 var replaced2 = ppAdd2.split('_').join(' ');
+	 document.getElementById("propertyAddress").innerHTML = replaced2;
+	 
+	 $("#loanIds").val(loanId);
+	 //$("#ownerAddress").val(walletAddress);
+	 document.getElementById("loanValue").innerHTML = "$ "+response.message.purchasePrice;
+	 document.getElementById("loanDownPaymentValue").innerHTML = "$ "+response.message.downPayment;
+		document.getElementById("interestRate").innerHTML = quote+"%";
+
+	 /*
+	 document.getElementById("interestRate").innerHTML = "2 %";
+	 document.getElementById("premium").innerHTML = "$ 75";
+	 
+	 */
+
+	 
+});
+
+
+
+
+});
+
+
+
+
+        
+
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+    	var ipAdd=localStorage.getItem("ipAdd");
+    	var port=localStorage.getItem("port");
+    	
+    	var getUrlParameter = function getUrlParameter(sParam) {
+    	    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+    	        sURLVariables = sPageURL.split('&'),
+    	        sParameterName,
+    	        i;
+
+    	    for (i = 0; i < sURLVariables.length; i++) {
+    	        sParameterName = sURLVariables[i].split('=');
+
+    	        if (sParameterName[0] === sParam) {
+    	            return sParameterName[1] === undefined ? true : sParameterName[1];
+    	        }
+    	    }
+    	};
+
+    	var loanId = getUrlParameter('loanId');
+    	var walletAddress = getUrlParameter('walletAddress');
+    	var ipAddIpfs=localStorage.getItem("ipAddIpfs");
+
+        $('#btnShow').click(function(){
+        	$.get("/getCustomerPortfolioInfo?walletAddress="+walletAddress+"&loanId="+loanId, function(response){
+        		  // alert(JSON.stringify(response.people));
+        		//alert(JSON.stringify(response));
+        		
+        		 
+        		// document.getElementById("propertyAddress").innerHTML = response.message.propertyAddress;
+        		
+        	
+            $("#dialog").dialog({
+               
+                    maxWidth:600,
+                    maxHeight: 450,
+                    width: 600,
+                    height: 450,
+                    modal: true
+                    
+                });
+          //  $("#frame").attr("src", "http://"+ipAddIpfs+":8090/ipfs/"+response.message.ssnHash);
+
+		$.get("/ipfs?fileHash=" + response.message.ssnHash, function (response) {
+				$("#frame").attr("src", response.ipfsUrl);
+			});
+
+        }); 
+        });
+        
+        $('#btnShow2').click(function(){
+        	$.get("/getCustomerPortfolioInfo?walletAddress="+walletAddress+"&loanId="+loanId, function(response){
+        		  // alert(JSON.stringify(response.people));
+        		//alert(JSON.stringify(response));
+        		
+        		 
+        		// document.getElementById("propertyAddress").innerHTML = response.message.propertyAddress;
+        		
+        	
+            $("#dialog2").dialog({
+               
+                    maxWidth:600,
+                    maxHeight: 450,
+                    width: 600,
+                    height: 450,
+                    modal: true
+                    
+                });
+           // $("#frame2").attr("src", "http://"+ipAddIpfs+":8090/ipfs/"+response.message.passportHash);
+
+		
+		$.get("/ipfs?fileHash=" + response.message.passportHash, function (response) {
+				$("#frame2").attr("src", response.ipfsUrl);
+			});
+
+        }); 
+        });
+        
+        
+        $('#btnShow3').click(function(){
+        	$.get("/getCustomerPortfolioInfo?walletAddress="+walletAddress+"&loanId="+loanId, function(response){
+        		  // alert(JSON.stringify(response.people));
+        		//alert(JSON.stringify(response));
+        		
+        		 
+        		// document.getElementById("propertyAddress").innerHTML = response.message.propertyAddress;
+        		
+        	
+            $("#dialog3").dialog({
+               
+                    maxWidth:600,
+                    maxHeight: 450,
+                    width: 600,
+                    height: 450,
+                    modal: true
+                    
+                });
+          //  $("#frame3").attr("src", "http://"+ipAddIpfs+":8090/ipfs/"+response.message.taxReturnsHash);
+
+		$.get("/ipfs?fileHash=" + response.message.taxReturnsHash, function (response) {
+				$("#frame3").attr("src", response.ipfsUrl);
+			});
+
+        }); 
+        });
+        
+        
+        
+        $('#btnShow4').click(function(){
+        	$.get("/getCustomerPortfolioInfo?walletAddress="+walletAddress+"&loanId="+loanId, function(response){
+        		  // alert(JSON.stringify(response.people));
+        		//alert(JSON.stringify(response));
+        		
+        		 
+        		// document.getElementById("propertyAddress").innerHTML = response.message.propertyAddress;
+        		
+        	
+            $("#dialog4").dialog({
+               
+                    maxWidth:600,
+                    maxHeight: 450,
+                    width: 600,
+                    height: 450,
+                    modal: true
+                    
+                });
+          //  $("#frame4").attr("src", "http://"+ipAddIpfs+":8090/ipfs/"+response.message.salaryDetailsHash);
+
+		$.get("/ipfs?fileHash=" + response.message.salaryDetailsHash, function (response) {
+				$("#frame4").attr("src", response.ipfsUrl);
+			});
+
+        }); 
+        });
+    });
+</script>
+
+
+
+<script>
+function MyFunction(){
+	$("#nav_bar2").show();
+}
+
+</script>
+
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+</html>

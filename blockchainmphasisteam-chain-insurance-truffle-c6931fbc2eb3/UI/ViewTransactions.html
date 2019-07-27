@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Transactions For Insurance </title>
+  
+    
+     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/MainLogin.css">
+     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
+      <script src="assets/jquery-3.2.1.min.js"></script>
+    
+<!--   <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">  -->
+    <link rel="stylesheet" href="assets/DataTables/datatables.min.css">
+<!-- <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>  -->
+     <script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
+   <script src="assets/js/Properties.js"></script>
+     
+     <script src="assets/js/allTx.js"></script>
+            <script src="assets/js/easyNotify.js"></script>
+     
+          <script src="https://www.w3schools.com/lib/w3.js"></script> 
+     
+      
+   
+    <style>
+
+#namanyay-search-btn {
+background:black;
+color:white;
+margin-top:19px;
+font: 'trebuchet ms', trebuchet;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+
+#namanyay-search-box {
+background: #eee;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:300px;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+ }
+</style>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body id="main_body">
+   
+   
+   
+      <!--  
+    Header -->
+   
+ <nav class="navbar navbar-default" id="nav_bar" style="background:black;">
+        <div class="container-fluid">
+            <div class="navbar-header" ><a class="navbar-brand navbar-link" href="#"><i class="fa fa-th" id="bank_icon" style="margin-right:3px;"></i><span id="bankName" style="font-size:17px;">Chain Insurance</span></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                                   <li role="presentation" id="f" style="margin-right:350px;"><a href="#" onclick="MyFunction();">Information</a></li>
+                                                   <li role="presentation" id="e" style="margin-right:450px;"><a href="#" onclick="MyFunction();">Information</a></li>
+                
+                    <li role="presentation" id="a"><a href="index.html" >About</a></li>
+                    <li role="presentation" id="b"><a href="ApplyForLoan.html" >Customer's Portal</a></li>
+                    <li role="presentation" id="c"><a href="ApplyForLoan.html">Admin's Portal</a></li>
+                    
+                    <li role="presentation" id="d"><a href="bankLogin.html"><i class="fa fa-lock" id="tx_icon" style="margin-right:8px;"></i>Login</a></li>
+                    
+                    <li role="presentation" style="color:white;">
+                    Search
+<input id="namanyay-search-box" name="q" size="40" type="text" />
+<button id="namanyay-search-btn"><i class="fa fa-search" aria-hidden="true"></i>
+</button>
+               </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    
+    <nav class="navbar navbar-default" id="nav_bar2" style="background:#f3f1f1;">
+        <div class="container-fluid" style="background:#f3f1f1;">
+            
+            <div class="collapse navbar-collapse" id="navcol-1" style="background:#f3f1f1;">
+                <ul class="nav navbar-nav navbar-left" style="font-size:14px;" >
+                              
+                
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Free Credit Report </a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">myBank Rate</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">IRA CD Rates</a></li>
+                    <li style="margin-right:8px;" ><a href="MortgageMain.html" style="color:black;">Get Quotes</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Loan Calculator</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Brokerage Account</a></li>
+                    
+                    
+                    
+                    
+                    
+                  
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>   
+   
+    <div class="imagebanner">
+  <img src="assets/img/bannerInsNew.jpg" alt="Chain Insurance" style="width:100%;">
+  <div class="content">
+    <h1 id="custInfo">Welcome To Chain Insurance.</h1>
+    <p>All Requests For Chain Insurance.</p>
+  </div>
+</div>
+  
+  
+    
+            <button class="buttonLink" onclick="goBack()" style="margin-left:910px;margin-top:40px;">Go Back</button>
+    
+    <div class="container-fluid" id="main_container" style="margin-top:5px;width:850px;">
+        
+
+ <h2 style="color:#120d7c;text-align:left;">All Transactions</h2>
+ <br>
+  <table class="table-fill" id="pendingRequestTx" style="color:black;border:1px solid;">
+  
+  </table>
+   
+  
+    </div>
+    
+  
+     
+    
+   
+   
+</body>
+<script>
+w3.includeHTML();
+</script>
+        <script src="assets/js/Properties.js"></script>
+
+  <script>
+$(document).ready(function(){
+	 $("#e").hide();
+	 $("#f").show();
+	 $("#nav_bar2").hide();
+	 $("#inc").hide();
+	 
+	// localStorage.setItem("insuranceAddress1", "0xf7ab1d176f706b10b94a7bf3fb8f0a486480f0a0");
+
+	 $("#namanyay-search-box").hide();
+	 
+	 //var bank=localStorage.getItem("banksName");
+//	 document.getElementById("bankName").innerHTML = "Chain Insurance";
+        //$("#main_footer").hide();
+       // document.getElementById("jumbotron_header").innerHTML = "Welcome To "+"ABC Bank";
+       var ipAdd=ipAddress();
+		var insAdd=contract();
+	     var ipAddIpfs=ipfsIpAddress();
+	     var port=portNo();
+	   
+	
+ var arr=[];
+	 arr.push("firstVal");
+	/* 
+	 setInterval(
+
+			 function(){
+			 $.get("http://"+ipAddress+":"+port+"/getMessage", function(response5){
+			// alert(JSON.stringify(response5));
+			
+
+			 $("#title").val(response5.globalMessagArray.message);
+			 var resp=response5.globalMessagArray.message;
+			 var replacedMessage = resp.split('_').join(' ');
+			 var n = replacedMessage.includes("Insurance"); 
+			 if(n==true){
+			 if(arr[0]!=resp){
+			 //alert("change of value");
+			 arr[0]=resp;
+			 var options = {
+			     title: "New notification",
+			     options: {
+			      // body: $("#message").val(),
+			 	body: replacedMessage,
+			      // icon: myImg,
+			       lang: 'en-US'
+			     //  onClick: myFunction
+			     }
+			   };
+			   console.log(options);
+			   $("#easyNotify").easyNotify(options);
+			 }
+			 }
+
+
+			  
+
+
+			 });
+
+			 }, 
+
+
+			 5000);
+	 */
+	 
+$("#namanyay-search-btn").on('focus', function () {
+	 $("#a").hide();
+	 $("#b").hide();
+	 $("#c").hide();
+	 $("#d").hide();
+	 $("#f").hide();
+	 $("#e").show();
+
+	
+	 $("#namanyay-search-box").show();
+   
+});
+
+
+
+
+$("#namanyay-search-box").on('blur', function () {
+	 $("#a").show();
+	 $("#b").show();
+	 $("#c").show();
+	 $("#d").show();
+	 $("#f").show();
+	 $("#e").hide();
+	 $("#namanyay-search-box").hide();
+
+  
+});
+
+
+});
+
+
+
+
+        
+
+
+</script>
+
+
+
+<script>
+function MyFunction(){
+	$("#nav_bar2").show();
+}
+
+</script>
+
+
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+</html>

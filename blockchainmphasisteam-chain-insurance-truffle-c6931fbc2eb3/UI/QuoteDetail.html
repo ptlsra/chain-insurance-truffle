@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Details </title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/MainLogin.css">
+    
+    <style>
+
+#namanyay-search-btn {
+background:black;
+color:white;
+margin-top:19px;
+font: 'trebuchet ms', trebuchet;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+
+#namanyay-search-box {
+background: #eee;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:300px;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+ }
+</style>
+    
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
+
+<script src="assets/jquery-3.2.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+              <script src="https://www.w3schools.com/lib/w3.js"></script> 
+    
+</head>
+
+<body id="main_body">
+   
+   
+   
+   
+ <!--  
+    Header -->
+   
+        <div w3-include-html="commonHeader.html"></div> 
+   
+    <div class="imagebanner">
+  <img src="assets/img/bannerInsNew.jpg" alt="Chain Insurance" style="width:100%;">
+  <div class="content">
+    <h1 id="custInfo">Welcome To Chain Insurance.</h1>
+    <p id="PolicyIntroCustName">Policy Details.</p>
+  </div>
+</div>
+  
+   <button class="buttonLink" onclick="goBack()" style="margin-left:780px;margin-top:40px;">Go Back</button>
+  
+    <div class="container-fluid" id="main_container" >
+        <div class="row">
+        
+        
+         
+            
+   <div class="col-lg-6 col-md-12 card" id="apply_loan_column" style="margin-top:20px;margin-left:390px;width:450px;">
+         <div class="titleLanding" id="titleText" style="margin-top:10px;">Log In As Admin</div>
+   <form role="form"   method="POST" action="" id="form1" >
+           
+           
+            
+     <br>
+     <br>
+      <p  style="color:black;margin-left:2px;text-align:left;">Loan ID: </p>
+<input type="text" class="form-control" id="loanId" name="loanId" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+           
+            
+             <p  style="color:black;margin-left:2px;text-align:left;">Term Of Policy: </p>
+<input type="text" class="form-control" id="termOfPolicy" name="termOfPolicy" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+<p  style="color:black;margin-left:2px;text-align:left;">APR :</p>
+<input type="text" class="form-control" id="apr" name="apr" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+<p  style="color:black;margin-left:2px;text-align:left;">Name Of Customer :</p>
+<input type="text" class="form-control" id="name" name="name" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+<p  style="color:black;margin-left:2px;text-align:left;">Email ID : </p>
+<input type="text" class="form-control" id="emailId" name="emailId" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+
+
+
+<input type="text" class="form-control" id="policyId" name="policyId">
+<input type="submit" value="Approve Request" id="button3">
+          
+           </form>
+         
+          
+          
+ 
+        
+ 
+    
+              
+              
+                </div>
+            
+             
+            
+    </div>
+    </div>
+     
+    
+<script src="assets/js/ApproveQuotePost.js"></script>  
+ 
+</body>
+<script>
+w3.includeHTML();
+</script>
+   <script src="assets/js/Properties.js"></script>
+
+  <script>
+$(document).ready(function(){
+	 $("#e").hide();
+	 $("#f").show();
+	 $("#nav_bar2").hide();
+	 $("#inc").hide();
+	 $("#policyId").hide();
+	 
+	 
+	 $("#namanyay-search-box").hide();
+	 
+	 //var bank=localStorage.getItem("banksName");
+//	 document.getElementById("bankName").innerHTML = "Chain Insurance";
+
+	 
+        //$("#main_footer").hide();
+       // document.getElementById("jumbotron_header").innerHTML = "Welcome To "+"ABC Bank";
+       
+	
+
+$("#namanyay-search-btn").on('focus', function () {
+	 $("#a").hide();
+	 $("#b").hide();
+	 $("#c").hide();
+	 $("#d").hide();
+	 $("#f").hide();
+	 $("#e").show();
+
+	
+	 $("#namanyay-search-box").show();
+   
+});
+
+
+
+
+$("#namanyay-search-box").on('blur', function () {
+	 $("#a").show();
+	 $("#b").show();
+	 $("#c").show();
+	 $("#d").show();
+	 $("#f").show();
+	 $("#e").hide();
+	 $("#namanyay-search-box").hide();
+
+  
+});
+
+
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+var insuranceAddress = getUrlParameter('insuranceAddress');
+var policyId = getUrlParameter('policyId');
+var name = getUrlParameter('name');
+
+var Name4=name.charAt(0).toUpperCase() + name.slice(1);
+ var replaced = Name4.split('_').join(' ');
+
+document.getElementById("titleText").innerHTML = "Request Details For ID: "+policyId;
+
+document.getElementById("PolicyIntroCustName").innerHTML = "Request Details For Customer :"+replaced;
+
+
+$("#loanId").prop("readonly", true);
+
+$("#termOfPolicy").prop("readonly", true);
+$("#apr").prop("readonly", true);
+$("#name").prop("readonly", true);
+$("#emailId").prop("readonly", true);
+
+
+$("#policyId").val(policyId);
+/*
+var ipAdd=localStorage.getItem("ipAdd");
+var port=localStorage.getItem("port");
+*/
+var ipAdd=ipAddress();
+var contractAddress=contract();
+var ipAddIpfs=ipfsIpAddress();
+var port=portNo();
+localStorage.setItem("ipAdd", ipAdd);
+localStorage.setItem("ipAddIpfs", ipAddIpfs);
+localStorage.setItem("port", port);
+localStorage.setItem("insuranceAddress1", contractAddress);
+//alert(port);
+
+//$.get("http://"+ipAdd+":"+port+"/getCustomerPolicy?policyId="+policyId+"&insuranceAddress="+insuranceAddress, function(response){
+$.get("http://"+ipAdd+":"+port+"/getCustomerPolicy?policyId="+policyId+"&insuranceAddress="+insuranceAddress, function(response){
+	
+	$("#loanId").val(response.message.loanId);
+	var term=response.message.termOfPolicy ;
+	//term=term.replace("_", " ");
+	$("#termOfPolicy").val(term +" years");
+	$("#apr").val(response.message.apr);
+	
+	var name=response.message.name;
+	name=name.replace("_", " ");
+	$("#name").val(name);
+	$("#emailId").val(response.message.emailId);
+	
+	
+	
+	
+});
+
+
+});
+
+
+
+
+        
+
+
+</script>
+
+
+
+<script>
+function MyFunction(){
+	$("#nav_bar2").show();
+}
+
+</script>
+
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+</html>
